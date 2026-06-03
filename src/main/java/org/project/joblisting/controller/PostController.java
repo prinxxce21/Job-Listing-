@@ -27,19 +27,19 @@ public class PostController {
 
     @GetMapping("/allPosts")
     @CrossOrigin
-    public List<Post> getAllPosts(){
-       return repo.findAll();
+    public List<Post> getAllPosts() {
+        return repo.findAll();
     }
 
     @GetMapping("/posts/{text}")
     @CrossOrigin
-    public List<Post> search(@PathVariable String text){
+    public List<Post> search(@PathVariable String text) {
         return srepo.findByText(text);
     }
 
     @PostMapping("/post")
     @CrossOrigin
-    public Post addPost(@RequestBody Post post){
+    public Post addPost(@RequestBody Post post) {
         return repo.save(post);
     }
 }
